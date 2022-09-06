@@ -43,7 +43,8 @@ uint8_t data_rec[6];
 uint8_t chipid=0;
 int16_t x,y,z;
 float xg, yg, zg;
-char tx[100];
+float mediana = 0;
+char tx[120];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,12 +75,14 @@ void adxl_read_address (uint8_t reg)
 
 void adxl_init (void)
 {
-	adxl_read_address (0x00); // read the DEVID
-
+	adxl_read_address (0x00); // read the DEV ID
+	HAL_Delay(50);
 	adxl_write (0x31, 0x01);  // data_format range= +- 4g
+	HAL_Delay(50);
 	adxl_write (0x2d, 0x00);  // reset all bits
+	HAL_Delay(50);
 	adxl_write (0x2d, 0x08);  // power_cntl measure and wake up 8hz
-
+	HAL_Delay(50);
 }
 
 void tx_send(char *tx, uint16_t len)
@@ -263,7 +266,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-  HAL_Delay(5000);
+  HAL_Delay(10);
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -284,6 +287,7 @@ int main(void)
   led_check();
   HAL_Delay(200);
   sprintf((char *)tx, "Inicjalizacja zakonczona!\n");
+  HAL_Delay(2000);
   tx_send(tx, strlen((char const *)tx));
   /* USER CODE END 2 */
 
@@ -291,21 +295,40 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  adxl_read_values (0x32);
-	  x = ((data_rec[1] << 8 ) | data_rec[0]);
-	  y = ((data_rec[3] << 8 ) | data_rec[2]);
-	  z = ((data_rec[5] << 8 ) | data_rec[4]);
+	float xm[51] = {};
+	float xms[51] = {};
+	int a = 0, count = 1;
 
-	  xg = x * 7.8;
-	  yg = y * 7.8;
-	  zg = z * 7.8;
+	for(int i=0;i<51;i++) {
+	adxl_read_values (0x32);
+	x = ((data_rec[1] << 8 ) | data_rec[0]);
+	y = ((data_rec[3] << 8 ) | data_rec[2]);
+	z = ((data_rec[5] << 8 ) | data_rec[4]);
 
-	  sprintf((char *)tx, "a_x = %4.5f [mg]\ta_y = %4.5f [mg]\ta_z = %4.5f [mg]\n", xg, yg, zg);
-	  tx_send(tx, strlen((char const *)tx));
+	xg = x * 7.8;
+	yg = y * 7.8;
+	zg = z * 7.8;
 
-	  led(xg);
+	if(count%4==0) {
+	sprintf((char *)tx, "---------------------------\na_x = %4.2f [mg]\na_y = %4.2f [mg]\na_z = %4.2f [mg]\nx_mediana = %4.2f [mg]\n", xg, yg, zg, mediana);
+	tx_send(tx, strlen((char const *)tx));
+	count = 0 ;
+	}
+	count++;
+	xm[i] = fabs(xg);
+	}
 
-	  HAL_Delay(200);
+	for(int j=0;j<51;j++) {
+		for(int k=0;k<51;k++) {
+			if(xms[j] < xm[k]) {
+				xms[j] = xm[k];
+				a=k;
+			}
+		}
+	xm[a] = 0;
+	}
+	mediana = xms[25];
+	led(mediana);											//wprowadzam wartość mediany do funckcji
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
