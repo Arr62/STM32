@@ -12639,3 +12639,342 @@ arm-none-eabi-size   poziomica_cyfrowa.elf
   39016	    488	   1896	  41400	   a1b8	poziomica_cyfrowa.elf
 Finished building: default.size.stdout
  
+18:30:56 **** Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39024	    488	   1896	  41408	   a1c0	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:31:56 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39024	    488	   1896	  41408	   a1c0	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+18:34:14 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39024	    488	   1896	  41408	   a1c0	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+18:34:38 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39016	    488	   1896	  41400	   a1b8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:35:09 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39016	    488	   1896	  41400	   a1b8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+18:43:38 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:314:22: warning: too many arguments for format [-Wformat-extra-args]
+  314 |  sprintf((char *)tx, "--------------------------------------------------------------------------------", xg, yg, zg, mediana);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39168	    488	   1896	  41552	   a250	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:44:27 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39096	    488	   1896	  41480	   a208	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:45:47 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39096	    488	   1896	  41480	   a208	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:46:56 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39096	    488	   1896	  41480	   a208	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:48:15 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39088	    488	   1896	  41472	   a200	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:49:26 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39088	    488	   1896	  41472	   a200	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+18:49:30 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39088	    488	   1896	  41472	   a200	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+18:52:03 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39128	    488	   1896	  41512	   a228	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:53:14 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39128	    488	   1896	  41512	   a228	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:54:49 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39128	    488	   1896	  41512	   a228	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:55:38 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39144	    488	   1896	  41528	   a238	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+19:06:26 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'adxl_check':
+../Core/Src/main.c:258:38: warning: statement with no effect [-Wunused-value]
+  258 |   while (x == 0 && y == 0 && z == 0) adxl_init;
+      |                                      ^~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:301:17: error: unknown type name 'v'
+  301 |   HAL_Delay(10);v
+      |                 ^
+../Core/Src/main.c:302:3: error: conflicting types for 'led_check'
+  302 |   led_check();
+      |   ^~~~~~~~~
+../Core/Src/main.c:93:6: note: previous definition of 'led_check' was here
+   93 | void led_check(void)
+      |      ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:06:32 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:301:17: error: unknown type name 'v'
+  301 |   HAL_Delay(10);v
+      |                 ^
+../Core/Src/main.c:302:3: error: conflicting types for 'led_check'
+  302 |   led_check();
+      |   ^~~~~~~~~
+../Core/Src/main.c:93:6: note: previous definition of 'led_check' was here
+   93 | void led_check(void)
+      |      ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:06:54 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39496	    488	   1896	  41880	   a398	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+19:09:12 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39808	    488	   1896	  42192	   a4d0	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+19:09:24 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39808	    488	   1896	  42192	   a4d0	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+19:12:18 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39736	    488	   1896	  42120	   a488	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+19:12:55 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39736	    488	   1896	  42120	   a488	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+19:15:45 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39768	    488	   1896	  42152	   a4a8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+19:20:19 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39768	    488	   1896	  42152	   a4a8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+18:20:33 **** Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39768	    488	   1896	  42152	   a4a8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:22:16 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "poziomica_cyfrowa.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Adrian\STM32CubeIDE\workspace_1.9.0\poziomica_cyfrowa\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="poziomica_cyfrowa.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: poziomica_cyfrowa.elf
+ 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+arm-none-eabi-objdump -h -S  poziomica_cyfrowa.elf  > "poziomica_cyfrowa.list"
+   text	   data	    bss	    dec	    hex	filename
+  39768	    488	   1896	  42152	   a4a8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 
+Finished building: poziomica_cyfrowa.list
+ 
+18:25:59 **** Incremental Build of configuration Debug for project poziomica_cyfrowa ****
+make -j8 all 
+arm-none-eabi-size   poziomica_cyfrowa.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39768	    488	   1896	  42152	   a4a8	poziomica_cyfrowa.elf
+Finished building: default.size.stdout
+ 

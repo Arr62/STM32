@@ -112,7 +112,7 @@ void led_check(void)
 	HAL_GPIO_WritePin(Led_R3_GPIO_Port, Led_R3_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(Led_R33_GPIO_Port, Led_R33_Pin, GPIO_PIN_SET);
 
-	HAL_Delay(1000);
+	HAL_Delay(400);
 	HAL_GPIO_WritePin(Led_G1_GPIO_Port, Led_G1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(Led_G2_GPIO_Port, Led_G2_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(Led_G22_GPIO_Port, Led_G22_Pin, GPIO_PIN_RESET);
@@ -126,6 +126,39 @@ void led_check(void)
 	HAL_GPIO_WritePin(Led_R22_GPIO_Port, Led_R22_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(Led_R3_GPIO_Port, Led_R3_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(Led_R33_GPIO_Port, Led_R33_Pin, GPIO_PIN_RESET);
+
+	HAL_Delay(400);
+	HAL_GPIO_WritePin(Led_G1_GPIO_Port, Led_G1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_G2_GPIO_Port, Led_G2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_G22_GPIO_Port, Led_G22_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_Y1_GPIO_Port, Led_Y1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_Y11_GPIO_Port, Led_Y11_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_Y2_GPIO_Port, Led_Y2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_Y22_GPIO_Port, Led_Y22_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_R1_GPIO_Port, Led_R1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_R11_GPIO_Port, Led_R11_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_R2_GPIO_Port, Led_R2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_R22_GPIO_Port, Led_R22_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_R3_GPIO_Port, Led_R3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Led_R33_GPIO_Port, Led_R33_Pin, GPIO_PIN_SET);
+
+	HAL_Delay(400);
+	HAL_GPIO_WritePin(Led_G1_GPIO_Port, Led_G1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_G2_GPIO_Port, Led_G2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_G22_GPIO_Port, Led_G22_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_Y1_GPIO_Port, Led_Y1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_Y11_GPIO_Port, Led_Y11_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_Y2_GPIO_Port, Led_Y2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_Y22_GPIO_Port, Led_Y22_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_R1_GPIO_Port, Led_R1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_R11_GPIO_Port, Led_R11_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_R2_GPIO_Port, Led_R2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_R22_GPIO_Port, Led_R22_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_R3_GPIO_Port, Led_R3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Led_R33_GPIO_Port, Led_R33_Pin, GPIO_PIN_RESET);
+
+	HAL_Delay(200);
+	HAL_GPIO_WritePin(Led_G1_GPIO_Port, Led_G1_Pin, GPIO_PIN_SET);
 }
 
 void led(float x)
@@ -250,6 +283,21 @@ void led(float x)
 		HAL_GPIO_WritePin(Led_R33_GPIO_Port, Led_R33_Pin, GPIO_PIN_SET);
 	}
 }
+
+void adxl_check(int16_t x, int16_t y, int16_t z) {
+	if (x == 0 && y == 0 && z == 0) {
+		sprintf((char *)tx, "Bład inicjalizacji adxl...\n");
+		tx_send(tx, strlen((char const *)tx));
+		while (x == 0 && y == 0 && z == 0) {
+			adxl_init();
+			HAL_Delay(200);
+		}
+	}
+	else {
+		sprintf((char *)tx, "Inicjalizacja zakonczona!\n");
+		tx_send(tx, strlen((char const *)tx));
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -259,47 +307,53 @@ void led(float x)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-  HAL_Delay(10);
+  HAL_Delay(5000);
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
-
+  HAL_Delay(10);
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  HAL_Delay(10);
   MX_USART2_UART_Init();
+  HAL_Delay(10);
   MX_I2C1_Init();
+  HAL_Delay(10);
   /* USER CODE BEGIN 2 */
   adxl_init(); // initialize adxl
+  HAL_Delay(10);
   led_check();
-  HAL_Delay(200);
-  sprintf((char *)tx, "Inicjalizacja zakonczona!\n");
+  HAL_Delay(10);
+  adxl_read_values (0x32);
+  x = ((data_rec[1] << 8 ) | data_rec[0]);
+  y = ((data_rec[3] << 8 ) | data_rec[2]);
+  z = ((data_rec[5] << 8 ) | data_rec[4]);
+  adxl_check(x, y, z);
   HAL_Delay(2000);
-  tx_send(tx, strlen((char const *)tx));
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	float xm[51] = {};
-	float xms[51] = {};
+	float xm[81] = {};
+	float xms[81] = {};
 	int a = 0, count = 1;
 
-	for(int i=0;i<51;i++) {
+	for(int i=0;i<81;i++) {
 	adxl_read_values (0x32);
 	x = ((data_rec[1] << 8 ) | data_rec[0]);
 	y = ((data_rec[3] << 8 ) | data_rec[2]);
@@ -309,8 +363,10 @@ int main(void)
 	yg = y * 7.8;
 	zg = z * 7.8;
 
-	if(count%4==0) {
-	sprintf((char *)tx, "---------------------------\na_x = %4.2f [mg]\na_y = %4.2f [mg]\na_z = %4.2f [mg]\nx_mediana = %4.2f [mg]\n", xg, yg, zg, mediana);
+	if(count%10==0) {
+	sprintf((char *)tx, "a_x = %6.2f [mg]\ta_y = %6.2f[mg]\ta_z = %6.2f [mg]\tx_mediana = %6.2f [mg]\n", xg, yg, zg, mediana);
+	tx_send(tx, strlen((char const *)tx));
+	sprintf((char *)tx, "------------------------------------------------------------------------------------------------\n");
 	tx_send(tx, strlen((char const *)tx));
 	count = 0 ;
 	}
@@ -318,8 +374,8 @@ int main(void)
 	xm[i] = fabs(xg);
 	}
 
-	for(int j=0;j<51;j++) {
-		for(int k=0;k<51;k++) {
+	for(int j=0;j<81;j++) {
+		for(int k=0;k<81;k++) {
 			if(xms[j] < xm[k]) {
 				xms[j] = xm[k];
 				a=k;
@@ -327,7 +383,7 @@ int main(void)
 		}
 	xm[a] = 0;
 	}
-	mediana = xms[25];
+	mediana = xms[40];
 	led(mediana);											//wprowadzam wartość mediany do funckcji
     /* USER CODE END WHILE */
 
