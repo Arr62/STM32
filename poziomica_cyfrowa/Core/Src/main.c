@@ -290,8 +290,14 @@ void adxl_check(int16_t x, int16_t y, int16_t z) {
 		tx_send(tx, strlen((char const *)tx));
 		while (x == 0 && y == 0 && z == 0) {
 			adxl_init();
+			HAL_Delay(100);
+			x = ((data_rec[1] << 8 ) | data_rec[0]);
+			y = ((data_rec[3] << 8 ) | data_rec[2]);
+			z = ((data_rec[5] << 8 ) | data_rec[4]);
 			HAL_Delay(200);
 		}
+		sprintf((char *)tx, "Inicjalizacja zakonczona!\n");
+		tx_send(tx, strlen((char const *)tx));
 	}
 	else {
 		sprintf((char *)tx, "Inicjalizacja zakonczona!\n");
